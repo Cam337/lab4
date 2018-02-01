@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>HCI Project Portfolio</title>	
+	<title>HCI Project Portfolio</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
+    <![endif]-->
 </head>
 
 <body>
@@ -27,17 +27,26 @@
 			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
 		</div>
 
+    <!-- Table of Contents -->
+    <ol>
+		{{#each projects}}
+			<li><a href="project/{{name}}">{{name}}</a></li>
+		{{/each}}
+    </ol>
 
 		<h4>Projects</h4>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		<div class="project" id="project1">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.people.1.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Waiting in Line</p>
-			</a>
-		</div>
+    {{#each projects}}
+		  <div class="project" id="{{id}}">
+			  <a href="project/{{name}}" class="thumbnail">
+				  <img src="images/{{image}}" class="img">
+				  <p>{{name}}</p>
+			  </a>
+		  </div>
+		{{/each}}
+		<!--
 		<div class="project" id="project2">
 			<a href="project.html" class="thumbnail">
 				<img src="images/lorempixel.city.1.jpeg" alt="Lorem Pixel image" class="img">
@@ -80,6 +89,7 @@
 				<p>Design tools</p>
 			</a>
 		</div>
+	-->
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
